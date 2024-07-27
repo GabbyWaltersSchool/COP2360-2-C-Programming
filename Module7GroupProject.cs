@@ -66,8 +66,8 @@ class Program
     {
         Console.WriteLine("Entering PopulateDictionary method...");
         dict["Apple"] = new List<string> { "Red", "Green" };
-        dict["Banana"] = new List<string> { "Yellow" };
-        dict["Cherry"] = new List<string> { "Red" };
+        dict["Banana"] = new List<string> { "Yellow", "Green" };
+        dict["Cherry"] = new List<string> { "Magenta" };
         Console.WriteLine("Dictionary populated.");
     }
 
