@@ -6,11 +6,14 @@ class Program
 {
     static void Main()
     {
+        // Creates a dictionary to store the keys and their associated list of values
         Dictionary<string, List<string>> myDictionary = new Dictionary<string, List<string>>();
         bool keepRunning = true;
 
+        // Main loop to display menu and process the user's choices
         while (keepRunning)
         {
+            // Display menu options to the user
             Console.WriteLine("Choose an option:");
             Console.WriteLine("a. Populate the Dictionary");
             Console.WriteLine("b. Display Dictionary Contents");
@@ -25,7 +28,8 @@ class Program
             if (char.TryParse(Console.ReadLine()?.ToLower(), out choice))
             {
                 Console.WriteLine($"You chose: {choice}"); // Debugging output
-
+                
+                // Performs action based on user choice
                 switch (choice)
                 {
                     case 'a':
@@ -62,6 +66,7 @@ class Program
         }
     }
 
+    // Populates the dictionary with predefined values
     static void PopulateDictionary(Dictionary<string, List<string>> dict)
     {
         Console.WriteLine("Entering PopulateDictionary method...");
@@ -71,15 +76,17 @@ class Program
         Console.WriteLine("Dictionary populated.");
     }
 
+    // Displays the contents of the dictionary
     static void DisplayDictionaryContents(Dictionary<string, List<string>> dict)
     {
         Console.WriteLine("Displaying dictionary contents...");
         foreach (var item in dict)
         {
+            // Prints each key and the associated values
             Console.WriteLine($"Key: {item.Key}, Values: {string.Join(", ", item.Value)}");
         }
     }
-
+    // Removes a key from the dictionary
     static void RemoveKey(Dictionary<string, List<string>> dict)
     {
         Console.Write("Enter the key to remove: ");
@@ -94,7 +101,7 @@ class Program
             Console.WriteLine($"Key '{key}' not found.");
         }
     }
-
+    // Adds a new key and value to the dictionary
     static void AddNewKeyAndValue(Dictionary<string, List<string>> dict)
     {
         Console.Write("Enter the new key: ");
@@ -112,7 +119,7 @@ class Program
             Console.WriteLine($"Key '{key}' already exists. Use option 'e' to add a value to an existing key.");
         }
     }
-
+    // Adds a value to an existing key in the dictionary
     static void AddValueToExistingKey(Dictionary<string, List<string>> dict)
     {
         Console.Write("Enter the key: ");
@@ -129,7 +136,7 @@ class Program
             Console.WriteLine($"Key '{key}' not found.");
         }
     }
-
+    // Sorts the dictionary by its keys and display the sorted dictionary
     static void SortKeys(Dictionary<string, List<string>> dict)
     {
         Console.WriteLine("Sorting the keys...");
@@ -137,6 +144,7 @@ class Program
         Console.WriteLine("Keys sorted:");
         foreach (var item in sortedDict)
         {
+            // Print each key and its associated values in sorted order
             Console.WriteLine($"Key: {item.Key}, Values: {string.Join(", ", item.Value)}");
         }
     }
